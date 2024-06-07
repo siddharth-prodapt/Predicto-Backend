@@ -1,0 +1,10 @@
+.venv
+./.venv
+*.pyc
+__pycache__/
+.vscode/
+./models/__pycache__/
+.env
+./.env
+*.png
+/scatter-plots

@@ -1,0 +1,48 @@
+API Response Pattern Success
+{
+	"message" : "success",
+	"status"  : "200",  //201
+	"data" 	  : []
+}
+
+
+
+API Response Pattern ERROR
+{
+	"message" : "ERROR",
+	"status"  : "404",  //500 //Custom Error Codes
+	"error"   :
+}
+
+
+class APIResponse:
+    @staticmethod
+    def success(data=None, message="Success", status_code=200):
+        response = {
+            "status": "success",
+            "message": message,
+            "data": data
+        }
+        return jsonify(response), status_code
+
+
+# static method 
+    @staticmethod
+    def failure(message="Failure", status_code=500):
+        response = {
+            "status": "failure",
+            "message": message
+        }
+        return jsonify(response), status_code
+
+
+
+--------------------------------------------------------
+
+Files JSON
+{
+	"id" : 1,
+	"filename": "abcd.txt",
+	"filetype": ".txt",
+	"userId:""
+}
